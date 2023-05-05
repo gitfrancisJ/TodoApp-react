@@ -109,9 +109,21 @@ input:focus{
 .completed {
   text-decoration: line-through;
 }
+.todo-item-wrapper p {
+  cursor: pointer;
+  word-wrap: break-word;
+}
 p {
   font-size: 16px;
   line-height: 24px;
   vertical-align: middle;
+}
+
+.powered-by {
+  color: gray;
+}
+
+.todos-container {
+  min-height: 400px;
 }
 
