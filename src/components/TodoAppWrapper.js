@@ -3,6 +3,8 @@ import React, {useEffect, useState} from 'react';
 import { TodoForm } from './TodoForm';
 import { TodoItem } from './TodoItem';
 
+import logo from '../logo.svg';
+
 export const TodoAppWrapper = () => {
   const [todos,setTodos] = useState([]);
   const [editingTodoId, setEditingTodoId] = useState(null);
@@ -48,7 +50,10 @@ export const TodoAppWrapper = () => {
           }
         </div>
       </div>
-      <p className='powered-by'>Powered by: Reactjs</p>
+      <div className='bottom-label'>
+        <p className='powered-by'>Powered by: Reactjs</p>
+        <img src={logo} className="App-logo" alt="logo" />
+      </div>
     </div>
   )
 }
