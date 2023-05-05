@@ -93,7 +93,7 @@ input:focus{
 .actions-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .edit-icon:hover {
@@ -106,12 +106,18 @@ input:focus{
   cursor: pointer;
 }
 
+.check-icon:hover {
+  color: limegreen;
+  cursor: pointer;
+}
+
 .completed {
   text-decoration: line-through;
 }
 .todo-item-wrapper p {
   cursor: pointer;
   word-wrap: break-word;
+  text-transform: uppercase;
 }
 p {
   font-size: 16px;
@@ -125,5 +131,11 @@ p {
 
 .todos-container {
   min-height: 400px;
+}
+
+.bottom-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
