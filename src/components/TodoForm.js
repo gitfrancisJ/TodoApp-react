@@ -35,7 +35,7 @@ export const TodoForm = ({addTodo, onUpdate, editingTodoId, todos}) => {
         <input type='text' placeholder={editingTodoId !== null ? 'Edit your task' : 'What needs to be done?'}
         value={value}
         onChange={onInputchange}
-        maxlength="40"
+        maxLength="40"
         required
         />
         <button type='submit' className='button-6'>{editingTodoId !== null ? 'Update' : 'Add'}</button>
