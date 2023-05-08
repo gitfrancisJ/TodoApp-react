@@ -1,10 +1,13 @@
 import './App.css';
+import { DataProvider } from './components/DataProvider';
 import { TodoAppWrapper } from './components/TodoAppWrapper';
 
 function App() {
   return (
     <div className="App">
-      <TodoAppWrapper />
+      <DataProvider>
+        <TodoAppWrapper />
+      </DataProvider>
     </div>
   );
 }
