@@ -1,5 +1,5 @@
 import '../index.css';
-import React, {useEffect, useState, useContext} from 'react';
+import React, { useContext } from 'react';
 import { TodoForm } from './TodoForm';
 import { TodoItem } from './TodoItem';
 import { TodoContext } from './DataProvider';
@@ -7,26 +7,7 @@ import { TodoContext } from './DataProvider';
 import logo from '../logo.svg';
 
 export const TodoAppWrapper = () => {
-  const [todos,setTodos] = useContext(TodoContext);
-  const [editingTodoId, setEditingTodoId] = useState(null);
-
-  const addTodo = todo => {
-    setTodos([ ...todos, {id: todos.length, task: todo, completed: false}]);
-    
-  }
-
-  const markComplete = (id) => {
-    setTodos(todos.map(todo => todo.id === id ? {
-      ...todo, completed: !todo.completed} : todo))
-  };
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id))
-  }
-
-  const handleEdit = (id) => {
-    setEditingTodoId(id);
-  };
+  const [todos, setTodos, addTodo, markComplete, deleteTodo, editingTodoId, setEditingTodoId, handleEdit] = useContext(TodoContext);
 
   const handleUpdate = (id, task) => {
       setTodos(
@@ -35,13 +16,10 @@ export const TodoAppWrapper = () => {
     setEditingTodoId(null);
   }
 
-  useEffect(() => {
-    console.log(todos)
-  }, [todos, editingTodoId])
   return (
 
       <div className='todo-app-wrapper'>
-        <p className='title'>To-do App Reactjs</p>
+        <p className='title'>To-do App</p>
 
         <div className='todo-form-container'>
           <TodoForm addTodo={addTodo}  onUpdate={handleUpdate} editingTodoId={editingTodoId} todos={todos}/>
